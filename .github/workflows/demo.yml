@@ -18,8 +18,9 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - uses: actions/checkout@v3
-        repository: litencatt/my-first-ts-npm-library
-        path: my-first
+        with:
+          repository: litencatt/my-first-ts-npm-library
+          path: my-first
       - run: |
           cp my-first/src/index.ts foo/.
           ls
