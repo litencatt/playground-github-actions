@@ -22,8 +22,11 @@ jobs:
           repository: litencatt/my-first-ts-npm-library
           path: my-first
       - run: |
+          ls
+      - run: |
           cp my-first/src/index.ts foo/.
           ls
           ls foo
+      - run: |
           rm -rf my-fist
           ls
