@@ -19,7 +19,7 @@ jobs:
           description: Description
           filter: |
             {
-              and: [
+              "and": [
                 {
                   "property": "Select",
                   "select": {
