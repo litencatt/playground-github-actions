@@ -33,7 +33,7 @@ jobs:
                   }
                 },
                 {
-                  "property": "Multi-Select",
+                  "property": "Multi-select",
                   "multi_select": {
                     "contains": "AAA"
                   }
