@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Slack Notification Test
 on:
   workflow_dispatch:
   push:
