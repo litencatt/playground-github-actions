@@ -27,4 +27,4 @@ const payload = {
   ]
 }
 console.dir(payload, { depth: null})
-fs.writeFileSync("payload.json", payload, { encoding: 'utf-8' })
+fs.writeFileSync("payload.json", JSON.stringify(payload), { encoding: 'utf-8' })
