@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Generate send payload for slack
-        uses: litencatt/notion-db-pages-payload-for-slack@v1.0.1
+        uses: litencatt/notion-db-pages-payload-for-slack@main
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
@@ -37,7 +37,7 @@ jobs:
                   "multi_select": {
                     "contains": "AAA"
                   }
-                }
+                },
               ]
             }
       - name: Send custom JSON data to Slack workflow
