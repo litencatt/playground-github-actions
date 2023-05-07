@@ -6,13 +6,19 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    container: node:latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate payload
+        run: |
+          yarn
+          yarn start
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          payload-file-path: "./payload-slack-content-sample.json"
+          payload-file-path: "./payload.json"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
