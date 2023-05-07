@@ -19,10 +19,26 @@ jobs:
           description: Description
           filter: |
             {
-              "property": "Select",
-              "select": {
-                "equals": "Foo"
-              }
+              and: [
+                {
+                  "property": "Select",
+                  "select": {
+                    "equals": "Foo"
+                  }
+                },
+                {
+                  "property": "Number",
+                  "number": {
+                    "greater_than_or_equal_to": 3
+                  }
+                },
+                {
+                  "property": "Multi-Select",
+                  "multi_select": {
+                    "contains": "AAA"
+                  }
+                },
+              ]
             }
       - name: Send custom JSON data to Slack workflow
         id: slack
