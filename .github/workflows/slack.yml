@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Generate send payload for slack
-        uses: litencatt/notion-db-pages-payload-for-slack@main
+        uses: litencatt/notion-db-pages-payload-for-slack@v1.0.3
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
@@ -19,7 +19,7 @@ jobs:
           description: Description
           filter: |
             {
-              and: [
+              "and: [
                 {
                   "property": "Select",
                   "select": {
