@@ -37,7 +37,7 @@ jobs:
                   "multi_select": {
                     "contains": "AAA"
                   }
-                },
+                }
               ]
             }
       - name: Send custom JSON data to Slack workflow
