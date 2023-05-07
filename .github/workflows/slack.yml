@@ -19,7 +19,7 @@ jobs:
           description: Description
           filter: |
             {
-              "and": [
+              and: [
                 {
                   "property": "Select",
                   "select": {
@@ -37,7 +37,7 @@ jobs:
                   "multi_select": {
                     "contains": "AAA"
                   }
-                },
+                }
               ]
             }
       - name: Send custom JSON data to Slack workflow
