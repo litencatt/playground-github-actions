@@ -7,38 +7,12 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - uses: chckout/action@v3
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "タグ付け未完了エスカレタスク一覧",
-                    "emoji": true
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "以下タグ付けされていないためタグ付けをお願いします:pray:"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "- <https://google.com|Page1>\n- <https://google.com|Page2>\n- <https://google.com|Page3>"
-                  }
-                }
-              ]
-            }
+          payload-file-path: "./payload-slack-content-sample.json"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
