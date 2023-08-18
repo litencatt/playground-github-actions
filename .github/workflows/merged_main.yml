@@ -8,14 +8,14 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     env:
       TZ: Asia/Tokyo
     steps:
       - run: echo "run test"
 
   deploy:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "${{ github.ref }}"
