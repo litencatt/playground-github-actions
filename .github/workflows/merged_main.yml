@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    type:
+      - closed
   pull_request:
 
 jobs:
@@ -22,7 +24,6 @@ jobs:
     needs: test
     if: >
       github.ref == 'refs/heads/main'
-      && github.event.pull_request.merged == true
     steps:
       - run: |
           echo "run action"
