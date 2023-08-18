@@ -7,7 +7,6 @@ on:
 
 jobs:
   test:
-    # PRへのpush毎に動かしたいし、mainにマージされたときも動かしたい
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Tokyo
